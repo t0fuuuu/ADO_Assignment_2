@@ -1,0 +1,1 @@
+select * from nwt_raw.nwt_distributor.customer
