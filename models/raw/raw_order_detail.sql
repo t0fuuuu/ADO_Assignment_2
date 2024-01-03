@@ -2,4 +2,4 @@
 
 Select *
 From 
-nwt_raw.nwt_distributor.orderdetail
+nwt_raw.nwt_distributor.order_detail
