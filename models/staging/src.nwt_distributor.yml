@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: NWT_DISTRIBUTOR
+    description: A Clone of NWT Snowflake Database
+    database: NWT_RAW
+    schema: NWT_DISTRIBUTOR
+    tables:
+      - name: CATEGORY
+      - name: CUSTOMER
+      - name: EMPLOYEE
+      - name: EMOPLOYEE_TERRITORY
+      - name: ORDER_DETAIL
+      - name: ORDERS
+      - name: PRODUCT
+      - name: REGION
+      - name: SHIPPER
+      - name: SUPPLIER
+      - name: TERRITORY
+
+  
