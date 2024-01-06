@@ -1,6 +1,8 @@
 version: 2
 
 models:
+
+### RAW_PRODUCT ####
   - name: raw_product
     columns:
       - name: productid
@@ -10,17 +12,19 @@ models:
       - name: productName
         tests:
           - unique
-          - not null
+          - not_null
       - name: supplierid
         tests:
-          - not null
+          - not_null
       - name: categoryid
         tests:
-          - not null
-      - name: quantityPerUnit
+          - not_null
+      - name: discontinued
         tests:
-          - not null
+          - not_null
           - accepted_values: 
               values:
                 - 'TRUE'
                 - 'FALSE'
+
+### RAW_PRODUCT ####
