@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: raw_product
+    columns:
+      - name: productid
+        tests:
+          - unique
+          - not_null
+      - name: productName
+        tests:
+          - unique
+          - not null
+      - name: supplierid
+        tests:
+          - not null
+      - name: categoryid
+        tests:
+          - not null
+      - name: quantityPerUnit
+        tests:
+          - not null
+          - accepted_values: 
+              values:
+                - 'TRUE'
+                - 'FALSE'
