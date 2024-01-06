@@ -9,13 +9,47 @@ sources:
       - name: CATEGORY
       - name: CUSTOMER
       - name: EMPLOYEE
+        description: raw employee table
+        columns:
+        - name: employeeID
+          description: primary key for employee
+          tests:
+            - unique
+            - not_null
       - name: EMOPLOYEE_TERRITORY
+        description: raw employee_territory table
+        columns:
+        - name: employeeID
+          description: composite key for employee_territory
+          tests:
+            - not_null
+        - name: territoryID
+          description: composite key for employee_territory
+          tests:
+            - not_null
+          constraints:
+          - type: unique
+            columns: [employeeID, territoryID]
       - name: ORDER_DETAIL
       - name: ORDERS
       - name: PRODUCT
       - name: REGION
+        description: raw region table
+        columns:
+        - name: regionID
+          description: primary key for region
+          tests:
+            - unique
+            - not_null
       - name: SHIPPER
       - name: SUPPLIER
       - name: TERRITORY
+        description: raw territory table
+        columns:
+        - name: territoryID
+          description: primary key for territory
+          tests:
+            - unique
+            - not_null
 
   
