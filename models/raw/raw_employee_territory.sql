@@ -1,5 +1,4 @@
 {{ config (materialized='table')}}
 
 Select *
-From 
-nwt_raw.nwt_distributor.employee_territory
+From {{ source('NWT_DISTRIBUTOR', 'EMOPLOYEE_TERRITORY')}}

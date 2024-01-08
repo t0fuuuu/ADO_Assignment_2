@@ -1,5 +1,4 @@
 {{ config (materialized='table')}}
 
 Select *
-From 
-nwt_raw.nwt_distributor.order_table
+From {{ source('NWT_DISTRIBUTOR', 'ORDERS')}}
