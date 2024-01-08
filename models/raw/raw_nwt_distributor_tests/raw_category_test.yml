@@ -1,0 +1,20 @@
+version: 2
+
+models:
+
+  - name: raw_category
+    columns:
+      - name: categoryID
+        tests:
+          - unique
+          - not_null
+      - name: categoryname
+        tests:
+          - unique
+          - not_null
+      - name: description
+        tests:
+          - not_null
+      - name: picture
+        tests:
+          - not_null

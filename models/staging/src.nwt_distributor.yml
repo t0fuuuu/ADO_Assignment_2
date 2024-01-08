@@ -7,6 +7,7 @@ sources:
     schema: NWT_DISTRIBUTOR
     tables:
       - name: CATEGORY
+        description: raw category table
       - name: CUSTOMER
       - name: EMPLOYEE
         description: raw employee table
