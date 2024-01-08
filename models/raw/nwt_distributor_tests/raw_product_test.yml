@@ -18,6 +18,9 @@ models:
       - name: categoryid
         tests:
           - not_null
+      - name: quantityperunit
+        tests:
+          - not_null
       - name: discontinued
         tests:
           - not_null
