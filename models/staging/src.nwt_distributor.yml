@@ -17,7 +17,7 @@ sources:
           tests:
             - unique
             - not_null
-      - name: EMOPLOYEE_TERRITORY
+      - name: EMPLOYEE_TERRITORY
         description: raw employee_territory table
         columns:
         - name: employeeID
