@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: raw_region
+    columns:
+      - name: regionID
+        tests:
+          - unique
+          - not_null
+      - name: regionDescription
+        tests:
+          - not_null
