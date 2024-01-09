@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: raw_employee_territory
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - employeeID
+            - territoryID
+    columns:
+      - name: territoryID
+        tests:
+          - not_null
+      - name: employeeID
+        tests:
+          - not_null

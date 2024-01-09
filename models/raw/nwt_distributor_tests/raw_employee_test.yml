@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: raw_employee
+    columns:
+      - name: employeeID
+        tests:
+          - unique
+          - not_null
+      - name: lastname
+        tests:
+          - not_null
+      - name: firstname
+        tests:
+          - not_null
+      - name: title
+        tests:
+          - not_null
+      - name: titleofcourtesy
+        tests:
+          - not_null
+      - name: birthdate
+        tests:
+          - not_null
+      - name: hiredate
+        tests:
+          - not_null
+      - name: address
+        tests:
+          - not_null
+      - name: city
+        tests:
+          - not_null
+      - name: region
+        tests:
+          - not_null
+      - name: postalcode
+        tests:
+          - not_null
+      - name: country
+        tests:
+          - not_null
+      - name: homephone
+        tests:
+          - not_null
+      - name: extension
+        tests:
+          - not_null
+      - name: photo
+        tests:
+          - not_null
+      - name: notes
+        tests:
+          - not_null
+      - name: reportsto
+        tests:
+          - not_null
+      - name: photopath
+        tests:
+          - not_null
