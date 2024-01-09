@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: raw_territory
+    columns:
+      - name: territoryid #PK
+        tests:
+          - not_null 
+          - unique
+      - name: territorydescription 
+        tests:
+          - not_null
+          - unique
+      - name: regionid #FK
+        tests:
+          - not_null
