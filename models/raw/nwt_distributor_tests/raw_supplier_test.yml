@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: raw_supplier
+    columns:
+      - name: supplierid
+        tests:
+          - not_null 
+          - unique
+      - name: companyname
+        tests:
+          - not_null
+          - unique
+      - name: contactname
+        tests:
+          - not_null
+      - name: contacttitle
+        tests:
+          - not_null
+      - name: address
+        tests:
+          - not_null
+      - name: city
+        tests:
+          - not_null
+      - name: region
+        tests:
+          - not_null
+      - name: postalcode
+        tests:
+          - not_null
+      - name: country
+        tests:
+          - not_null
+      - name: phone
+        tests:
+          - unique
+          - not_null
