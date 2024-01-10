@@ -1,8 +1,7 @@
-
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'ADO_Assignment_2'
+name: 'nwt_distributor'
 version: '1.0.0'
 config-version: 2
 
@@ -31,7 +30,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
 models:
-  ADO_Assignment_2:
+  nwt_distributor:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+    ORDERS_FRESH:
+      +materialized: table
+      unique_key: orderID
+    ORDER_DETAIL_FRESH:
+      +materialized: table
+      unique_key: orderID
