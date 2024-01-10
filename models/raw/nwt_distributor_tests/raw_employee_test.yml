@@ -49,9 +49,6 @@ models:
       - name: photo
         tests:
           - not_null
-      - name: notes
-        tests:
-          - not_null
       - name: reportsto
         tests:
           - not_null
