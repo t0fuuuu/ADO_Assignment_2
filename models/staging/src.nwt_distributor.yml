@@ -9,6 +9,14 @@ sources:
       - name: CATEGORY
         description: raw category table
       - name: CUSTOMER
+        description: raw customer table
+        columns:
+        - name: customerID
+          description: primary key for customer
+          tests:
+            - unique
+            - not_null
+
       - name: EMPLOYEE
         description: raw employee table
         columns:
@@ -33,6 +41,18 @@ sources:
             columns: [employeeID, territoryID]
       - name: ORDER_DETAIL
       - name: ORDERS
+        description: raw orders table
+        columns:
+        - name: orderID
+          description: primary key for orders
+          tests:
+            - unique
+            - not_null
+        - name: customerID
+          description: foreign key for orders
+        - name: employeeID
+          description: foreign key for orders
+          
       - name: PRODUCT
       - name: REGION
         description: raw region table
