@@ -9,11 +9,11 @@ sources:
       - name: CATEGORY
         description: raw category table
         columns:
-        - name: categoryID
-          description: primary key for category
-          tests:
-            - unique
-            - not_null
+          - name: categoryID
+            description: primary key for category
+            tests:
+              - unique
+              - not_null
       - name: CUSTOMER
       - name: EMPLOYEE
         description: raw employee table
@@ -44,19 +44,26 @@ sources:
       - name: ORDER_DETAIL
         description: raw order_detail table
         columns:
-        - name: orderID
-          description: composite key for order_detail
-          tests:
-            - not_null
-        - name: productID
-          description: composite key for order_detail
-          tests:
-            - not_null
+          - name: orderID
+            description: composite key for order_detail
+            tests:
+              - not_null
+          - name: productID
+            description: composite key for order_detail
+            tests:
+              - not_null
             constraints:
-              - unique
+              - type: unique
                 columns: [orderID, productID]
       - name: ORDERS
       - name: PRODUCT
+        description: raw product table
+        columns:
+          - name: productID
+            description: primary key for product
+            tests:
+              - unique
+              - not_null
       - name: REGION
         description: raw region table
         columns:
