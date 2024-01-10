@@ -1,6 +1,3 @@
-
-
-
 -- Replace NULL values in specified columns with default values
 UPDATE NWT_RAW.NWT_DISTRIBUTOR.RAW_SUPPLIER
 SET REGION = 'Unknown'
