@@ -45,7 +45,6 @@ sources:
             constraints:
               - unique
                 columns: [orderID, productID]
-            
       - name: ORDERS
       - name: PRODUCT
       - name: REGION
