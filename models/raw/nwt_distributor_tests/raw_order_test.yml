@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: raw_order
+  - name: raw_orders
     columns:
       - name: orderID
         tests:
@@ -13,33 +13,33 @@ models:
       - name: employeeID
         tests:
           - not_null
-      # - name: orderDate
-      #   tests:
-      #     - not_null
-      # - name: requiredDate
-      #   tests:
-      #     - not_null
-      # - name: shippedDate
-      #   tests:
-      #     - not_null
-      # - name: shipVia
-      #   tests:
-      #     - not_null
-      # - name: shipName
-      #   tests:
-      #     - not_null
-      # - name: shipAddress
-      #   tests:
-      #     - not_null
-      # - name: shipCity
-      #   tests:
-      #     - not_null
-      # - name: shipRegion
-      #   tests:
-      #     - not_null
-      # - name: shipPostalCode
-      #   tests:
-      #     - not_null
-      # - name: shipCountry
-      #   tests:
-      #     - not_null
+      - name: orderDate
+        tests:
+          - not_null
+      - name: requiredDate
+        tests:
+          - not_null
+      - name: shippedDate
+        tests:
+          - not_null
+      - name: shipVia
+        tests:
+          - not_null
+      - name: shipName
+        tests:
+          - not_null
+      - name: shipAddress
+        tests:
+          - not_null
+      - name: shipCity
+        tests:
+          - not_null
+      - name: shipRegion
+        tests:
+          - not_null
+      - name: shipPostalCode
+        tests:
+          - not_null
+      - name: shipCountry
+        tests:
+          - not_null
