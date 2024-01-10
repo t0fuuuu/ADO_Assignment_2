@@ -8,6 +8,12 @@ sources:
     tables:
       - name: CATEGORY
         description: raw category table
+        columns:
+        - name: categoryID
+          description: primary key for category
+          tests:
+            - unique
+            - not_null
       - name: CUSTOMER
       - name: EMPLOYEE
         description: raw employee table
