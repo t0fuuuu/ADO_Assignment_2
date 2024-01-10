@@ -32,6 +32,20 @@ sources:
           - type: unique
             columns: [employeeID, territoryID]
       - name: ORDER_DETAIL
+        description: raw order_detail table
+        columns:
+        - name: orderID
+          description: composite key for order_detail
+          tests:
+            - not_null
+        - name: productID
+          description: composite key for order_detail
+          tests:
+            - not_null
+            constraints:
+              - unique
+                columns: [orderID, productID]
+            
       - name: ORDERS
       - name: PRODUCT
       - name: REGION
