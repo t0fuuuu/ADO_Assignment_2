@@ -15,6 +15,14 @@ sources:
             - unique
             - not_null
       - name: CUSTOMER
+        description: raw customer table
+        columns:
+        - name: customerID
+          description: primary key for customer
+          tests:
+            - unique
+            - not_null
+
       - name: EMPLOYEE
         description: raw employee table
         columns:
@@ -44,18 +52,30 @@ sources:
       - name: ORDER_DETAIL
         description: raw order_detail table
         columns:
-        - name: orderID
-          description: composite key for order_detail
-          tests:
-            - not_null
-        - name: productID
-          description: composite key for order_detail
-          tests:
-            - not_null
+          - name: orderID
+            description: composite key for order_detail
+            tests:
+              - not_null
+          - name: productID
+            description: composite key for order_detail
+            tests:
+              - not_null
             constraints:
-              - unique
+              - type: unique
                 columns: [orderID, productID]
       - name: ORDERS
+        description: raw orders table
+        columns:
+        - name: orderID
+          description: primary key for orders
+          tests:
+            - unique
+            - not_null
+        - name: customerID
+          description: foreign key for orders
+        - name: employeeID
+          description: foreign key for orders
+          
       - name: PRODUCT
       - name: REGION
         description: raw region table
@@ -93,3 +113,5 @@ sources:
             description: foreign key for territory
             tests:
               - not_null
+
+  
