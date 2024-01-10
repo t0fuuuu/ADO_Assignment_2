@@ -8,64 +8,88 @@ sources:
     tables:
       - name: CATEGORY
         description: raw category table
+        columns:
+        - name: categoryID
+          description: primary key for category
+          tests:
+            - unique
+            - not_null
       - name: CUSTOMER
       - name: EMPLOYEE
         description: raw employee table
         columns:
-        - name: employeeID
-          description: primary key for employee
-          tests:
-            - unique
-            - not_null
+          - name: employeeID
+            description: primary key for employee
+            tests:
+              - unique
+              - not_null
+          - name: reportsTo
+            description: foreign key for employee
+            tests:
+              - not_null
       - name: EMPLOYEE_TERRITORY
         description: raw employee_territory table
         columns:
-        - name: employeeID
-          description: composite key for employee_territory
-          tests:
-            - not_null
-        - name: territoryID
-          description: composite key for employee_territory
-          tests:
-            - not_null
-          constraints:
-          - type: unique
-            columns: [employeeID, territoryID]
+          - name: employeeID
+            description: composite key for employee_territory
+            tests:
+              - not_null
+          - name: territoryID
+            description: composite key for employee_territory
+            tests:
+              - not_null
+            constraints:
+              - type: unique
+                columns: [employeeID, territoryID]
       - name: ORDER_DETAIL
+        description: raw order_detail table
+        columns:
+        - name: orderID
+          description: composite key for order_detail
+          tests:
+            - not_null
+        - name: productID
+          description: composite key for order_detail
+          tests:
+            - not_null
+            constraints:
+              - unique
+                columns: [orderID, productID]
       - name: ORDERS
       - name: PRODUCT
-        description: raw product table
-        columns:
-	      -name: productID
-          description: primary key for product 
-          tests:
-	          -unique
-	          -not_null
-        -name: SupplierID
-	        description: foreign key
-          test:
-            -not_null
-	      -name: CategoryID 
-	        description: foreign key
-          test:
-            -not_null
       - name: REGION
         description: raw region table
         columns:
-        - name: regionID
-          description: primary key for region
-          tests:
-            - unique
-            - not_null
+          - name: regionID
+            description: primary key for region
+            tests:
+              - unique
+              - not_null
       - name: SHIPPER
+        description: raw shipper table
+        columns:
+          - name: shipperID
+            description: primary key for shipper
+            tests:
+              - unique
+              - not_null
       - name: SUPPLIER
+        description: raw supplier table
+        columns:
+          - name: supplierID
+            description: primary key for supplier
+            tests:
+              - unique
+              - not_null
       - name: TERRITORY
         description: raw territory table
         columns:
-        - name: territoryID
-          description: primary key for territory
-          tests:
-            - unique
-            - not_null
-
-  
+          - name: territoryID
+            description: primary key for territory
+            tests:
+              - unique
+              - not_null
+          - name: regionID
+            description: foreign key for territory
+            tests:
+              - not_null
