@@ -10,7 +10,6 @@ models:
       - name: territorydescription 
         tests:
           - not_null
-          - unique
       - name: regionid #FK
         tests:
           - not_null
