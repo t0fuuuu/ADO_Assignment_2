@@ -34,6 +34,21 @@ sources:
       - name: ORDER_DETAIL
       - name: ORDERS
       - name: PRODUCT
+        description: raw product table
+        columns:
+	      -name: productID
+          description: primary key for product 
+          tests:
+	          -unique
+	          -not_null
+        -name: SupplierID
+	        description: foreign key
+          test:
+            -not_null
+	      -name: CategoryID 
+	        description: foreign key
+          test:
+            -not_null
       - name: REGION
         description: raw region table
         columns:
