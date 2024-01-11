@@ -75,6 +75,13 @@ sources:
           - name: employeeID
             description: foreign key for orders
       - name: PRODUCT
+        description: raw product table
+        columns:
+          - name: productID
+            description: primary key for product 
+            tests:
+              - unique
+              - not_null
       - name: REGION
         description: raw region table
         columns:
@@ -121,4 +128,4 @@ sources:
         columns:
           - name: orderID
             description: part of the composite key for ORDER_DETAIL table
-  
+
