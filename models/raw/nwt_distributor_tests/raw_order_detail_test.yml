@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: raw_order_detail
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - orderID
+            - productID
+    columns:
+      - name: orderID
+        tests:
+          - not_null
+      - name: productID
+        tests:
+          - not_null
+      - name: unitPrice
+        tests:
+          - not_null
+      - name: quantity
+        tests:
+          - not_null
+      - name: discount
+        tests:
+          - not_null
