@@ -16,3 +16,5 @@
 ---- Change the "null" postal code to "nil"
 --UPDATE nwt_distributor.raw_orders
 --SET shipPostalCode = REPLACE(shipPostalCode, 'NULL', 'NIL');
+
+-----Impute null values in shipped date
