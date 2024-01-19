@@ -18,3 +18,16 @@
 --SET shipPostalCode = REPLACE(shipPostalCode, 'NULL', 'NIL');
 
 -----Impute null values in shipped date
+
+---- Replace 3 date columns with '00' in the year with '19' 
+--UPDATE nwt_distributor.raw_orders
+--SET OrderDate = CONCAT('19', SUBSTRING(OrderDate, 3))
+--WHERE OrderDate LIKE '00%';
+
+--UPDATE nwt_distributor.raw_orders
+--SET RequiredDate = CONCAT('19', SUBSTRING(RequiredDate, 3))
+--WHERE RequiredDate LIKE '00%';
+
+--UPDATE nwt_distributor.raw_orders
+--SET ShippedDate = CONCAT('19', SUBSTRING(ShippedDate, 3))
+--WHERE ShippedDate LIKE '00%';
