@@ -24,14 +24,12 @@ jobs:
         with:
           python-version: 3.8.x
 
-      - name: Execute SQL scripts in models/cleaning
+      - name: Update timestamps in models/cleaning directory
         run: |
-          for script in $GITHUB_WORKSPACE/models/cleaning/*.sql; do
-            echo "Running script: $script"
-            # Replace the following command with your SQL execution command.
-            # For example, if you use a SQL command-line tool:
-            # sqlcmd -S server -d database -U username -P password -i "$script"
-          done
+          touch $GITHUB_WORKSPACE/models/cleaning/*
+          git add $GITHUB_WORKSPACE/models/cleaning/*
+          git commit -m "Update timestamps in models/cleaning directory" || echo "No changes to commit"
+          git push
 
       - name: Run schemachange
         env:
