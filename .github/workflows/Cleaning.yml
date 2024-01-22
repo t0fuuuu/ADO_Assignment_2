@@ -13,15 +13,20 @@ on:
   workflow_dispatch:
 
 jobs:
-  alter_database:
+  deploy-snowflake-changes-job:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Set up Snowflake connection
-      run: |
+      - name: Use Python 3.8.x
+        uses: actions/setup-python@v2.2.1
+        with:
+          python-version: 3.8.x
+
+      - name: Run snowsql
+        env:
           SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
           SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
           SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
@@ -29,10 +34,10 @@ jobs:
           SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
           SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
           SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
-      shell: bash
-
-    - name: Execute SQL statements
-      run: |
-        # Use the <tool> command to execute SQL statements
-        <tool> -c "ACCOUNT=${SNOWFLAKE_ACCOUNT} USER=${SNOWFLAKE_USER} PASSWORD=${SNOWFLAKE_PASSWORD} DATABASE=${SNOWFLAKE_DATABASE}" -f path/to/your/sql/script.sql
-      shell: bash
+        run: |
+          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+          python --version
+          echo "Step 1: Running snowsql"
+          for file in $GITHUB_WORKSPACE/cleaning/*.sql; do
+            snowsql -a $SNOWFLAKE_ACCOUNT -u $SNOWFLAKE_USER -r $SNOWFLAKE_ROLE -w $SNOWFLAKE_WAREHOUSE -d $SNOWFLAKE_DATABASE -s $SNOWFLAKE_SCHEMA -c $SNOWFLAKE_DATABASE -f $file
+          done
