@@ -1,3 +1,5 @@
+USE SCHEMA nwt_distributor;
+
 -- Replace NULL values in specified columns with default values
 UPDATE NWT_RAW.NWT_DISTRIBUTOR.RAW_SUPPLIER
 SET REGION = 'Unknown'
@@ -11,12 +13,3 @@ SET CITY = INITCAP(CITY);
 UPDATE NWT_RAW.NWT_DISTRIBUTOR.RAW_SUPPLIER
 SET COMPANYNAME = INITCAP(COMPANYNAME);
 
-
----- Standardize the country column (replace with consistent spellings)
---UPDATE NWT_RAW.NWT_DISTRIBUTOR.RAW_SUPPLIER
---SET COUNTRY = CASE
-    --WHEN COUNTRY IN ('UK', 'United Kingdom') THEN 'United Kingdom'
-    --WHEN COUNTRY IN ('USA', 'United States') THEN 'United States'
-    ---- Add more cases as needed
-    --ELSE COUNTRY
---END;
