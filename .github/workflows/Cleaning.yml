@@ -24,6 +24,12 @@ jobs:
         with:
           python-version: 3.8.x
 
+      - name: Debug Modify files in models/cleaning
+        run: |
+          ls $GITHUB_WORKSPACE/models/cleaning
+          echo "Working Directory: $(pwd)"
+          # Add your modification commands here
+
       - name: Run schemachange
         env:
           SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
