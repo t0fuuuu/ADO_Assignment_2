@@ -1,30 +1,58 @@
 -- Formatting Descriptions
 USE SCHEMA nwt_distributor;
 
-ALTER TABLE nwt_distributor.raw_category
+UPDATE nwt_distributor.raw_category
 SET description = 'Soft Drinks, Coffee, Tea, Beers, Ales'
 WHERE categoryID = 1;
 
-ALTER TABLE nwt_distributor.raw_category
+UPDATE nwt_distributor.raw_category
 SET description = 'Sauces, Relishes, Spreads, Seasonings'
 WHERE categoryID = 2;
 
-ALTER TABLE nwt_distributor.raw_category
+UPDATE nwt_distributor.raw_category
 SET description = 'Desserts, Candies, Sweet Breads'
 WHERE categoryID = 3;
 
-ALTER TABLE nwt_distributor.raw_category
+UPDATE nwt_distributor.raw_category
 SET description = 'Breads, Crackers, Pasta, Cereal'
 WHERE categoryID = 5;
 
-ALTER TABLE nwt_distributor.raw_category
+UPDATE nwt_distributor.raw_category
 SET description = 'Prepared Meats'
 WHERE categoryID = 6;
 
-ALTER TABLE nwt_distributor.raw_category
+UPDATE nwt_distributor.raw_category
 SET description = 'Dried Fruit, Bean Curd'
 WHERE categoryID = 7;
 
-ALTER TABLE nwt_distributor.raw_category
+UPDATE nwt_distributor.raw_category
 SET description = 'Seaweed, Fish'
 WHERE categoryID = 8;
+
+-- ALTER TABLE nwt_distributor.raw_category
+-- SET description = 'Soft Drinks, Coffee, Tea, Beers, Ales'
+-- WHERE categoryID = 1;
+
+-- ALTER TABLE nwt_distributor.raw_category
+-- SET description = 'Sauces, Relishes, Spreads, Seasonings'
+-- WHERE categoryID = 2;
+
+-- ALTER TABLE nwt_distributor.raw_category
+-- SET description = 'Desserts, Candies, Sweet Breads'
+-- WHERE categoryID = 3;
+
+-- ALTER TABLE nwt_distributor.raw_category
+-- SET description = 'Breads, Crackers, Pasta, Cereal'
+-- WHERE categoryID = 5;
+
+-- ALTER TABLE nwt_distributor.raw_category
+-- SET description = 'Prepared Meats'
+-- WHERE categoryID = 6;
+
+-- ALTER TABLE nwt_distributor.raw_category
+-- SET description = 'Dried Fruit, Bean Curd'
+-- WHERE categoryID = 7;
+
+-- ALTER TABLE nwt_distributor.raw_category
+-- SET description = 'Seaweed, Fish'
+-- WHERE categoryID = 8;
