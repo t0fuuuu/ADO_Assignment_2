@@ -1,11 +1,7 @@
 USE SCHEMA nwt_distributor;
 
--- Create new column 'derived_shipRegion'
-ALTER TABLE nwt_distributor.raw_orders
-ADD COLUMN derived_region VARCHAR(255);
-
 UPDATE nwt_distributor.raw_orders
-SET derived_shipRegion = 
+SET shipRegion = 
   CASE 
     WHEN country IN ('Italy', 'Portugal', 'Spain') THEN 'SEU'
     WHEN country IN ('Denmark', 'Finland', 'Ireland', 'Norway', 'Sweden') THEN 'NEU'
