@@ -24,13 +24,6 @@ jobs:
         with:
           python-version: 3.8.x
 
-      - name: Update timestamps in models/cleaning directory
-        run: |
-          touch $GITHUB_WORKSPACE/models/cleaning/*
-          git add $GITHUB_WORKSPACE/models/cleaning/*
-          git commit -m "Update timestamps in models/cleaning directory" || echo "No changes to commit"
-          git push
-
       - name: Run schemachange
         env:
           SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
