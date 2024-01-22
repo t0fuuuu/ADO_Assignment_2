@@ -26,11 +26,11 @@ jobs:
 
       - name: Execute SQL scripts in models/cleaning
         run: |
-          for file in $GITHUB_WORKSPACE/models/cleaning/*.sql; do
-            echo "Running script: $file"
-            # Replace the following command with your Snowflake SQL execution command.
-            # For example, if you use SnowSQL:
-            # snowsql -c my_snowflake_connection -f "$file"
+          for script in $GITHUB_WORKSPACE/models/cleaning/*.sql; do
+            echo "Running script: $script"
+            # Replace the following command with your SQL execution command.
+            # For example, if you use a SQL command-line tool:
+            # sqlcmd -S server -d database -U username -P password -i "$script"
           done
 
       - name: Run schemachange
