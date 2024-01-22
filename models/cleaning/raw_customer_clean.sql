@@ -1,3 +1,6 @@
+-- Formatting Descriptions
+-- USE SCHEMA nwt_distributor;
+
 --Replace . with - to standardise the values
 --UPDATE nwt_distributor.raw_customer
 --SET phone = REPLACE(phone, '.', '-');
