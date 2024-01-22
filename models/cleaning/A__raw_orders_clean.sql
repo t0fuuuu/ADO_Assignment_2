@@ -3,12 +3,12 @@ USE SCHEMA nwt_distributor;
 UPDATE nwt_distributor.raw_orders
 SET shipRegion = 
   CASE 
-    WHEN country IN ('Italy', 'Portugal', 'Spain') THEN 'SEU'
-    WHEN country IN ('Denmark', 'Finland', 'Ireland', 'Norway', 'Sweden') THEN 'NEU'
-    WHEN country IN ('Belgium', 'France', 'UK') THEN 'WEU'
-    WHEN country IN ('Austria', 'Germany', 'Poland', 'Switzerland') THEN 'CEU'
-    WHEN country IN ('Canada', 'Mexico', 'USA') THEN 'NA'
-    WHEN country IN ('Argentina', 'Brazil', 'Venezuela') THEN 'SA'
+    WHEN shipCountry IN ('Italy', 'Portugal', 'Spain') THEN 'SEU'
+    WHEN shipCountry IN ('Denmark', 'Finland', 'Ireland', 'Norway', 'Sweden') THEN 'NEU'
+    WHEN shipCountry IN ('Belgium', 'France', 'UK') THEN 'WEU'
+    WHEN shipCountry IN ('Austria', 'Germany', 'Poland', 'Switzerland') THEN 'CEU'
+    WHEN shipCountry IN ('Canada', 'Mexico', 'USA') THEN 'NA'
+    WHEN shipCountry IN ('Argentina', 'Brazil', 'Venezuela') THEN 'SA'
  END;
 
 -- Change the "null" postal code to "nil"
