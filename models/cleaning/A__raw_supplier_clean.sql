@@ -20,7 +20,7 @@ SET region =
     WHEN country IN ('Italy', 'Spain') THEN 'SEU'
     WHEN country IN ('Denmark', 'Finland','Norway', 'Sweden') THEN 'NEU'
     WHEN country IN ('France', 'UK', 'Netherlands') THEN 'WEU'
-    WHEN country IN ('Germany',) THEN 'CEU'
+    WHEN country IN ('Germany') THEN 'CEU'
     WHEN country IN ('Canada', 'USA') THEN 'NA'
     WHEN country IN ('Brazil', 'Venezuela') THEN 'SA'
     WHEN country IN ('Singapore') THEN 'SEA'
