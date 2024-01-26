@@ -1,3 +1,8 @@
+with
+product as (
+    select * from {{ ref('raw_product') }}
+)
+
 select * 
-from {{ ref('raw_product') }}
+from product
 where unitprice < unitcost 
