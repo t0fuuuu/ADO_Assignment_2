@@ -14,7 +14,7 @@ UPDATE NWT_RAW.NWT_DISTRIBUTOR.RAW_SUPPLIER
 SET COMPANYNAME = INITCAP(COMPANYNAME);
 
 --Cleaning the region column based on the country
-UPDATE NWT_RAW.NWT_DISTRIBUTOR.RAW_SUPPLIER 
+UPDATE nwt_distributor.RAW_SUPPLIER 
 SET region = 
   CASE 
     WHEN country IN ('Italy', 'Spain') THEN 'SEU'
