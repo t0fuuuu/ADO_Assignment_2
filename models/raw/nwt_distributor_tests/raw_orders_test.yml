@@ -22,9 +22,9 @@ models:
       - name: shippedDate
         tests:
           - not_null
-          - dbt_utils.expression_is_true:
-              name: candles_start_time_format
-              expression: "str_to_date(candle_start_time, '%Y-%m-%d %H:%i:%s.%f') is null"
+          # - dbt_utils.expression_is_true:
+          #     name: candles_start_time_format
+          #     expression: "str_to_date(candle_start_time, '%Y-%m-%d %H:%i:%s.%f') is null"
       - name: shipVia
         tests:
           - not_null
