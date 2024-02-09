@@ -1,4 +1,10 @@
-Welcome to your new dbt project!
+Welcome to our dbt project!
+
+Updated slides link: https://docs.google.com/presentation/d/1sIFGwKYMGiHLylZ_0lqx2Hcc16egcojIpmO1kF4MOEY/edit#slide=id.g2b7b1840164_0_0
+
+
+
+
 
 ### Using the starter project
 
